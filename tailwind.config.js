@@ -1,30 +1,34 @@
+const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
+const { join } = require('path');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,ts}'],
+  content: [
+    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
   theme: {
     colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
-    },
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
-    extend: {
-      spacing: {
-        '8xl': '96rem',
-        '9xl': '128rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
+      primary: '#E91E63',
+      'white': '#FFFFFF',
+      'secondary-text': '#757575',
+      'primary-text': '#212121',
+      'dark-primary': '#C2185B',
+      'light-primary': '#F8BBD0',
+      secondary: '#ffff00',
+      'accent': '#FF4081',
+      gray: {
+        100: "#f7f7f7",
+        200: "#e5e5e5",
       }
-    }
+    },
+    extend: {}
   },
-}
+  darkMode: "class",
+  plugins: [
+    require('@tailwindcss/forms'),
+    //require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+    //require('tailwindcss-children'),
+  ],
+};

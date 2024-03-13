@@ -8,13 +8,21 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    colors: {
+      primary: '#E91E63',
+      'white': '#FFFFFF',
+      'secondary-text': '#757575',
+      'primary-text': '#212121',
+      'dark-primary': '#C2185B',
+      'light-primary': '#F8BBD0',
+      secondary: '#ffff00',
+      'accent': '#FF4081',
+      gray: {
+        100: "#f7f7f7",
+        200: "#e5e5e5",
+      }
     },
+    extend: {}
   },
   darkMode: "class",
   plugins: [
