@@ -1,4 +1,4 @@
-namespace RoguesKnights.RoguesNightsApi.Test;
+namespace RoguesKnights.RoguesKnightsApi.Test;
 
 public class UnitTest1
 {

@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\rogues-nights-api\RoguesKnights.RoguesNightsApi.csproj" />
+    <ProjectReference Include="..\rogues-nights-api\RoguesKnights.RoguesKnightsApi.csproj" />
   </ItemGroup>
 
 </Project>
