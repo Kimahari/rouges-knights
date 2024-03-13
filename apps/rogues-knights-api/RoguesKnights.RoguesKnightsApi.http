@@ -1,0 +1,6 @@
+@RoguesKnights.RoguesKnightsApi_HostAddress = http://localhost:5090
+
+GET {{RoguesKnights.RoguesKnightsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
