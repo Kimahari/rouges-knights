@@ -1,0 +1,74 @@
+{
+  "name": "rogues-knights",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "rogues-knights",
+  "sourceRoot": "apps/rogues-knights/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rogues-knights",
+        "index": "apps/rogues-knights/src/index.html",
+        "browser": "apps/rogues-knights/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/rogues-knights/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/rogues-knights/src/favicon.ico",
+          "apps/rogues-knights/src/assets"
+        ],
+        "styles": ["apps/rogues-knights/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/rogues-knights/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/rogues-knights/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "rogues-knights:build:production"
+        },
+        "development": {
+          "buildTarget": "rogues-knights:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "rogues-knights:build"
+      }
+    }
+  }
+}
