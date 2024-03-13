@@ -20,7 +20,7 @@
           "apps/rogues-knights/src/favicon.ico",
           "apps/rogues-knights/src/assets"
         ],
-        "styles": ["apps/rogues-knights/src/styles.scss"],
+        "styles": ["apps/rogues-knights/src/styles.css"],
         "scripts": [],
         "server": "apps/rogues-knights/src/main.server.ts",
         "prerender": true,
